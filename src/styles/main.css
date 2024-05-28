@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #9d2d3e;
+  --second-color: #fff;
+  --third-color: #ffc836;
+  --background: #f3f3f3;
+}
+
+body{
+  background-color: var(--third-color);
+}
+
+.skip-content{
+  padding: 10px 40px;
+  position: absolute;
+  top: -40px;
+  border-radius: 0 10px 10px 0;
+  background-color: var(--primary-color);
+  z-index: 2;
+  text-decoration: none;
+  color: var(--third-color);
+  font-family: "Poppins", sans-serif;
+}
+
+.skip-content:focus{
+  top:0;  
+}
+
+/* NAVIGATION */
+header{
+  width: 100%;
+  height: 80px;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.brand-container{
+  font-family: 'Lora', sans-serif;
+  color: var(--third-color);
+  width: fit-content;
+  height: 44px;
+}
+
+.brand{
+  text-decoration: none;
+  color: var(--third-color)
+}
+
+.brand h1{
+  height: 44px;
+}
+
+.hamburger{
+  display: none;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.nav{
+  width: 500px;
+  z-index: 1;
+}
+
+.nav.active{
+  height: 200px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a{
+  text-decoration: none;
+  color: var(--third-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  padding: 10px 20px;
+  transition: .5s;
+}
+
+.nav ul li a:hover, .nav ul li a.active{
+  background-color: var(--third-color);
+  color: var(--second-color);
+  border-radius: 25px;
+}
+/* END NAV CSS */
+
+/* HERO CSS WRAP */
+.hero__wrapper{
+  width: 100%;
+  height: 500px;
+  background-image: url('../public/images/heros/hero-image_2.jpg');
+  filter: brightness(80%);  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -90px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__wrapper > h1{
+  font-size: 30px;
+  color: var(--second-color) ;
+  font-family: 'Poppins',sans-serif;
+}
+
+.hero__wrapper > p{
+  color: var(--second-color);
+  font-family: 'Poppins', sans-serif;
+}
+/* END HERO WRAPPER */
+#restaurant-list {
+  width: 100%;
+  min-height: 500px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#restaurant-list > h1{
+  text-align: center;
+  margin-top: 10px;
+  font-family: "Lora", sans-serif;
+
+}
+/* RESTO LIST CARD */
+.resto-list{
+  margin-top: 20px;
+  gap: 10px;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.resto-card {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-right: 2px;
+}
+    
+.resto-card .img-box {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+    
+.img-box img {
+  height: 100%;
+  z-index: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+    
+.resto-card .content {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background: var(--primary-color);
+  border-radius: 0 0 15px 15px;
+  border-top-left-radius: 0;
+  color: var(--third-color);
+  padding-top: 10px;
+}
+
+.details_anchor{
+  text-decoration: none;
+  color: var(--third-color);
+  padding: 10px 0;
+}
+    
+.resto_rating {
+  position: absolute;
+  top: 10px;
+  height: 40px;
+  width: 32%;
+  font-size: 18px;
+  background: var(--primary-color);
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+  padding-top: 10px;
+  z-index: 1;
+}
+    
+.resto_rating {
+  font-weight: 600;
+  color: var(--third-color)
+}
+    
+.resto_info {
+  width: 95%;
+  height: 100%;
+  padding-left: 10px;
+  font-family: "Poppins", sans-serif;
+}
+    
+.resto_loc {
+  margin: 0;
+}
+    
+.resto_name {
+  margin: 0;
+}
+    
+.resto_desc {
+  margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* END OF RESTO LIST CARD */
+
+/* DETAIL PAGE */
+.detail_wrapper{
+  min-height: 100vh;
+  width: 90%;
+  margin: 20px 0;
+  background: var(--primary-color);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  font-family: "Poppins", sans-serif;
+}
+
+.resto_wrapper{
+  width: 90%;
+  height: fit-content;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  text-align: justify;
+}
+
+.img_resto_container{
+  margin-top: 30px;
+  width: 100%;
+}
+
+.img_resto{
+  width: 100%;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.resto_details{
+  width: 100%;
+  color: var(--third-color)
+}
+
+.resto_details .resto_name{
+  font-size: 30px;
+  text-align: center;
+}
+
+.add_to_fav{
+  padding: 10px 44px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  border: none;
+}
+
+.add_to_fav:hover{
+  cursor: pointer;
+  padding: 10px 35px;
+  transition: .5s;
+}
+
+.menu_wrapper{
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: self-start;
+  flex-flow: row wrap;
+  margin: 20px 0;
+  background: var(--third-color);
+  border-radius: 20px;
+  padding: 10px;
+  color: var(--primary-color);
+}
+
+.menu_detail, .drink_detail{
+  font-weight: 800;
+  font-size: 28px;
+  text-decoration: underline;
+}
+
+.comments_wrapper{
+  width: 90%;
+  height: fit-content;
+  background: var(--third-color);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
+.comments_wrapper > h1{
+  color: var(--primary-color);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.comments{
+  width: 100%;
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+  color: var(--third-color)
+}
+
+.comment_input_wrapper{
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px 0;
+  background: var(--primary-color);
+  color: var(--third-color);
+  border-radius: 20px;
+}
+
+.form-group{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-group label{
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.form-control{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.form-group button{
+  width: 80px;
+  margin-top:10px;
+  height: 50px;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+  font-family: "Poppins",sans-serif;
+  border:none;
+}
+
+.form-group button:hover{
+  cursor: pointer;
+}
+
+.thumbs_up{
+  width: 80px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: var(--third-color);
+  font-size: 30px;
+  border-radius: 10px;
+  border: 2px dashed var(--third-color);
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* Main CSS */
+main{
+  width: 100%;
+  min-height: 500px;
+  border: 1px solid var(--third-color);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--third-color);
+  font-size: 20px;
+}
+
