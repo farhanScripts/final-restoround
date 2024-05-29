@@ -10,8 +10,14 @@ const RestaurantList = {
         aria-label="restaurant-image"
         tabindex="0"
       >
-        <h1>FIND YOUR FAVORITE RESTAURANT IN INDONESIA!</h1>
-        <p>You can add to favorite if you like</p>
+        <picture>
+          <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg"/>
+          <img src="./images/heros/hero-image_2-large.jpg" alt="Restaurant Backdrop">
+        </picture>
+        <div class="hero-content">
+          <h1>FIND YOUR FAVORITE RESTAURANT IN INDONESIA!</h1>
+          <p>You can add to favorite if you like</p>
+        </div>
       </section>
       <h1>Restaurant List</h1>
       <section

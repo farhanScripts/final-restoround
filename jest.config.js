@@ -8,6 +8,7 @@
 const config = {
   setupFiles: ['fake-indexeddb/auto'],
   testEnvironment: 'jsdom',
+  roots: ['<rootDir>/tests'],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

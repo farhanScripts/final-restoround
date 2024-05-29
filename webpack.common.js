@@ -57,7 +57,6 @@ module.exports = {
     },
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({
@@ -72,6 +71,9 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
+
+    new BundleAnalyzerPlugin(),
+
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -84,7 +86,8 @@ module.exports = {
       swDest: './sw.bundle.js',
       runtimeCaching: [
         {
-          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          urlPattern: ({ url }) =>
+            url.href.startsWith('https://restaurant-api.dicoding.dev'),
           handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'restaurant-api',

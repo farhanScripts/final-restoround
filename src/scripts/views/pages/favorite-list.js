@@ -10,6 +10,10 @@ const FavoriteList = {
         aria-label="restaurant-image"
         tabindex="0"
       >
+        <picture>
+          <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg"/>
+          <img src="./images/heros/hero-image_2-large.jpg" alt="Restaurant Backdrop">
+        </picture>
         <h1>SEE YOUR FAVORITE RESTAURANT IN INDONESIA!</h1>
         <p>You can off to favorite if you like</p>
       </section>
