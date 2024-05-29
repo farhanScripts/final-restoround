@@ -11,7 +11,7 @@ const createRestoCardTemplate = (resto) => `
         </p>
         <img
           class="lazyload"
-          src="${API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId}"
+          data-src="${API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId}"
           alt="resto-image"
           width="100%"
         />
@@ -50,7 +50,7 @@ const createCommentsItems = (comments) =>
 const createRestoDetailsTemplate = (resto) => `
   <section class="resto_wrapper" aria-label="Restaurant Information">
     <div class="img_resto_container">
-      <img class="img_resto lazyload" src="${
+      <img class="img_resto lazyload" data-src="${
         API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId
       }" alt="restaurant-image" />
     </div>
