@@ -1,5 +1,7 @@
 /* eslint-disable indent */
 import API_ENDPOINT from '../../globals/api-endpoint';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createRestoCardTemplate = (resto) => `
   <div class="resto-card" aria-label="resto card" tabindex="0">
@@ -8,6 +10,7 @@ const createRestoCardTemplate = (resto) => `
           ${resto.rating}
         </p>
         <img
+          class="lazyload"
           src="${API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId}"
           alt="resto-image"
           width="100%"
@@ -27,18 +30,7 @@ const createRestoCardTemplate = (resto) => `
       </div>
     </div>
   `;
-/*
-  | details_resto
-    | gambar resto
-    | nama resto
-    | Rating
-    | Lokasi
-    | Kota
-    | Deskripsi Full
-    | Resto Menu
-    | Add To Favorite Button
-    | Comments Section
-    */
+
 const createMenuItems = (items) =>
   // eslint-disable-next-line implicit-arrow-linebreak
   items.map((item) => `<li>${item.name}</li>`).join('');
@@ -58,7 +50,7 @@ const createCommentsItems = (comments) =>
 const createRestoDetailsTemplate = (resto) => `
   <section class="resto_wrapper" aria-label="Restaurant Information">
     <div class="img_resto_container">
-      <img class="img_resto" src="${
+      <img class="img_resto lazyload" src="${
         API_ENDPOINT.MEDIUM_BASE_IMAGE_URL + resto.pictureId
       }" alt="restaurant-image" />
     </div>
