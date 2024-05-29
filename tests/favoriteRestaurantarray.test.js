@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-undef */
 import { actsAsFavoriteRestaurantModel } from './contracts/favoriteRestaurantContract';
 
@@ -9,6 +10,7 @@ const FavoriteRestaurantArray = {
       return;
     }
 
+    // eslint-disable-next-line eqeqeq
     return favoriteRestaurant.find((resto) => resto.id == id);
   },
 
@@ -33,7 +35,7 @@ const FavoriteRestaurantArray = {
   deleteRestaurant(id) {
     // cara boros menghapus film dengan meng-copy film yang ada
     // kecuali film dengan id == id
-    favoriteRestaurant = favoriteRestaurant.filter((resto) => resto.id != id);
+    favoriteRestaurant = favoriteRestaurant.filter((resto) => resto.id !== id);
   },
 };
 
